@@ -10,7 +10,9 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠</text></svg>">
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠</text></svg>">
+<meta name="theme-color" content="#0d1117">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Browse, search, and copy emojis. All Unicode emojis organized by category.">
     <meta name="keywords" content="emoji picker, emoji keyboard, copy emoji, emoji list, smiley, emoticon">
     <meta property="og:title" content="Emoji Picker — DevKit Tools">
@@ -192,7 +194,7 @@
 <div id="emoji-grid" style="display:flex;flex-wrap:wrap;gap:2px;max-height:400px;overflow-y:auto;padding:8px;background:var(--bg);border-radius:var(--radius);"></div>
 
             <script>
-
+'use strict';
 const EMOJIS = [
     {cat:'Smileys', emojis:['😀','😃','😄','😁','😅','😂','🤣','😊','😇','🙂','😉','😌','😍','🥰','😘','😗','😋','😛','😜','🤪','😝','🤑','🤗','🤭','🤫','🤔','🤐','🤨','😐','😑','😶','😏','😒','🙄','😬','🤥','😌','😔','😪','🤤','😴','😷','🤒','🤕','🤢','🤮','🥴','😵','🤯','🥳','😎','🤓','🧐','😕','😟','🙁','😮','😯','😲','😳','🥺','😦','😧','😨','😰','😥','😢','😭','😱','😖','😣','😞','😓','😩','😫','🥱','😤','😡','😠','🤬','😈','👿','💀','☠','💩','🤡','👹','👺','👻','👽','👾','🤖']},
     {cat:'Gestures', emojis:['👋','🤚','🖐','✋','🖖','👌','🤌','🤏','✌','🤞','🤟','🤘','🤙','👈','👉','👆','🖕','👇','☝','👍','👎','✊','👊','🤛','🤜','👏','🙌','👐','🤲','🤝','🙏','✍','💅','🤳','💪','🦵','🦶','👂','🦻','👃','🧠','🦷','🦴','👀','👁','👅','👄']},
@@ -249,8 +251,7 @@ function filterCat(cat) {
 
 search.addEventListener('input', () => render(search.value));
 render();
-
-            </script>
+</script>
             </div>
         </div>
     </div>
@@ -260,13 +261,14 @@ render();
         © 2026 DevKit Tools
     </div>
     <script>
-    function copyText(text, btn) {
+'use strict';
+function copyText(text, btn) {
         navigator.clipboard.writeText(text).then(() => {
             var orig = btn.textContent;
             btn.textContent = 'Copied!';
             setTimeout(() => btn.textContent = orig, 1500);
         });
     }
-    </script>
+</script>
 </body>
 </html>
